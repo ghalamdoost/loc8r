@@ -8,9 +8,9 @@ const ctrlFood = require('../controllers/food');
 router.get('/', ctrMain.index);
 
 /* GET foodList page. */
-router.get('/list', ctrlFood.foodList);
+router.get('/foodlist', ctrlFood.foodList);
 
 /* GET myFavouriteFood page. */
-router.get('/favourite', ctrlFood.myFavourteFood);
+router.get('/myfavourtefood', ctrlFood.myFavourteFood);
 
 module.exports = router;
