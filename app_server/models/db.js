@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const dbURI = 'mongodb+srv://mongoUser:mongoPassword@cluster0.ovfkx.mongodb.net/?retryWrites=true&w=majority' //local DB connection
-//const dbURI = 'remote server'; // remote DB connection
+// const dbURI = 'mongodb://localhost/loc8r';
+const dbURI = 'mongodb+srv://mongoUser:mongoPassword@cluster0.ovfkx.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.connect(dbURI, {
      useNewUrlParser: true,
