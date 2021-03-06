@@ -5,4 +5,4 @@ block content
   p Here is my favourite food
   ul
     each item in foods  
-      li='type: ' + item.type +', name: '+ item.name
+      li= `Id: ${item._id}, Type: ${item.type}, Name: ${item.name}`
