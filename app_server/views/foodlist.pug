@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Here is my favourite food
+  ul
+    each item in foods  
+      li='type: ' + item.type +', name: '+ item.name
