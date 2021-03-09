@@ -5,13 +5,13 @@ const apiOptions = {
   server: 'http://localhost:3000'
 };
 
-const _renderHomepage=(req,res,responseBody)=>{
+const _renderListpage=(req,res,responseBody)=>{
     res.render('foodlist',{
         foods:responseBody
     });
 };
 
-const homelist=(req,res)=>{
+const foodlist=(req,res)=>{
     const path='/api/foods';
     const requestOptions={
         url:apiOptions.server+path,
@@ -19,7 +19,7 @@ const homelist=(req,res)=>{
         json:{}
     };
     request(requestOptions, (err, response, body)=>{
-        _renderHomepage(req,res,body);
+        _renderListpage(req,res,body);
     });
 };
 
@@ -42,6 +42,6 @@ const foodInfo=(req,res)=>{
 };
 
 module.exports = {
-    homelist,
+    foodlist,
     foodInfo
 };  
