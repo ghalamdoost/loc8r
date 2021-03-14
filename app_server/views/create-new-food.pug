@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    form(action='', method='POST')
+        div.form-group.row
+            label.col-1.col-form-label(for='name') Name:
+            input.col-2.form-control(type='text',name='name')
+        div.form-group.row
+            label.col-1.col-form-label(for='type') Type:
+            input.col-2.form-control(type='text', name='type')
+        div.form-group.row
+            button.col-3.btn.btn-primary(type='submit') Submit

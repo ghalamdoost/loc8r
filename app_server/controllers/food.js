@@ -1,5 +1,6 @@
 
 // const { request } = require("express");
+const { response } = require('express');
 const request = require('request');
 const apiOptions = {
   server: 'http://localhost:3000'
@@ -41,7 +42,40 @@ const foodInfo=(req,res)=>{
     });
 };
 
+const _renderCreatePage = function(req,res){
+    res.render('create-new-food',{
+        title:"Create New Food"
+    });
+};
+
+const addNewFood = function(req,res){
+    _renderCreatePage(req,res);
+}
+
+const doAddNewFood = function(req,res){
+    const path='/api/foods';
+    const postdata = {
+        name:req.params.name,
+        type:req.params.type
+    };
+    const requestOptions = {
+        url: apiOptions.server+path,
+        method:'POST',
+        json:postdata
+    };
+    request(
+        requestOptions,
+        (err, response,body)=>{
+            if(response.statusCode===201){
+                res.redirect('/');
+            }
+        }
+    );
+};
+
 module.exports = {
     foodlist,
-    foodInfo
+    foodInfo,
+    doAddNewFood,
+    addNewFood
 };  

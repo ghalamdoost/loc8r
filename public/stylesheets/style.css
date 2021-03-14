@@ -90,5 +90,10 @@ a:hover {
 body {
   font-family: "Cabin", Arial, sans-serif;
   color: #fff;
-  background-color: #108a93;
+  background-color: #6610f2;
+  /* background-color: #108a93; */
+}
+
+.list-group-item{
+  background-color: #6610f2;  
 }

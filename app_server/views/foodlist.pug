@@ -3,6 +3,7 @@ extends layout
 block content
   h1= title
   p Here is my favourite food
-  ul
+  ul.list-group
     each item in foods  
-      li= `Id: ${item._id}, Type: ${item.type}, Name: ${item.name}`
+      li.list-group-item: a(href=`/foods/${item._id}`)= `Id: ${item._id}`
+    a(href='/new') Add New Food
