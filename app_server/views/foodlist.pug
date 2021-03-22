@@ -1,9 +1,4 @@
 extends layout
 
 block content
-  h1= title
-  p Here is my favourite food
-  ul.list-group
-    each item in foods  
-      li.list-group-item: a(href=`/foods/${item._id}`)= `Id: ${item._id}`
-    a(href='/new') Add New Food
+  app-home-list
