@@ -9,11 +9,26 @@ export class FoodServiceService {
 
   private foodsURL = 'http://localhost:3000/api/foods';
   constructor(private http:HttpClient) { }
+  
   getFoods() : Promise<void | Food[]>{
     return this.http.get(this.foodsURL)
     .toPromise()
     .then(response =>  response as Food[])
     .catch(this.handleError);
+  }
+
+  getSingleFood(foodid: string): Promise<void | Food>{
+    return this.http.get(this.foodsURL+'/'+foodid)
+      .toPromise()
+      .then(response => response as Food)
+      .catch(this.handleError);
+  }
+
+  createFood(newFood: Food): Promise<void | Food> {
+    return this.http.post(this.foodsURL, newFood)
+      .toPromise()
+      .then(response => response as Food)
+      .catch(this.handleError);
   }
 
   private handleError(error: any){
